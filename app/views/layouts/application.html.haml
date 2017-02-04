@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title #{yield(:title)} | Japan America Society of Vermont
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    
+    /[if lt IE 9]
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+  %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        = link_to "JASV", '#', id: "logo"
+        %nav
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "About",   '#'
+            %li= link_to "Events",   '#'
+            %li= link_to "Otasuke Club / おたすけクラブ", '#'
+            %li= link_to "Language Classes",   '#'
+            %li= link_to "Membership",   '#'
+            %li= link_to "Tenny Memorial Fund",   '#'
+            %li= link_to "Member Businesses",   '#'
+            %li= link_to "Contact",   '#'
+    .container
+      = yield
+    
